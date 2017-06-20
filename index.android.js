@@ -17,7 +17,7 @@ export default class DropAlertDemo extends Component {
     return (
       <View style={styles.container}>
       <TouchableOpacity style={{height:50,width:100,backgroundColor:'#FFC125',borderRadius:5}} onPress={()=>{this.da.changeVisiable()}}/>
-      <DropAlert ref={(ref)=>{this.da=ref}}/>
+      <DropAlert ref={(ref)=>{this.da=ref}} location='top' />
       </View>
     );
   }

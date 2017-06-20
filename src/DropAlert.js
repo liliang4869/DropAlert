@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React,{Component,PropTypes} from 'react'
 import {Animated,View,Text,Dimensions} from 'react-native'
 var {height,width}=Dimensions.get('window');
 
@@ -16,7 +16,6 @@ export default class DropAlert extends Component{
         }
     }
     render(){
-        console.log(this.state.offset)
         return(this.state.visiable?<Animated.View style={[{borderRadius:5,backgroundColor:'#ff00007f'},this.props.style,{
             transform:[
                 {translateY:this.state.offset}
@@ -50,6 +49,9 @@ DropAlert.defaultProps={
     message:'DropAlert Test',
     location:'bottom',
     style:{height:100,backgroundColor:'#789456'},
-    fontColor:'white',
     textStyle:{color:'white',textAlign:'center'}
+}
+DropAlert.propTypes={
+    message:PropTypes.string,
+    location:PropTypes.oneOf('bottom','top'),
 }
